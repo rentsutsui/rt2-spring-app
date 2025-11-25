@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>エラー | 社員管理システム</title>
+	<link rel="stylesheet" th:href="@{/css/error.css}" />
+</head>
+
+<body>
+	<div class="error-container">
+		<h1>エラーが発生しました</h1>
+		<p th:text="'ステータス: ' + ${status}"></p>
+		<p th:text="'メッセージ: ' + ${error}"></p>
+		<a th:href="@{/}">トップページに戻る</a>
+	</div>
+</body>
+
+</html>

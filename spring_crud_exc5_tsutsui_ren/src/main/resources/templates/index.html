@@ -5,9 +5,9 @@
 	<title>ログイン | 社員管理システム</title>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	
+
 	<!-- ファビコン -->
-	<link rel="icon" type="image/png" href="images/favicon.png">
+	<!--	<link rel="icon" type="image/png" th:href="images/favicon.png">-->
 </head>
 
 <body>
@@ -27,15 +27,18 @@
 					<div class="login_form">
 						<div class="login_label">社員ID</div>
 						<div class="login_input">
-							<input type="text" th:field="*{empId}" />
+							<input type="text" th:field="*{empId}" th:errorclass="input-error" />
 						</div>
 					</div>
+
 					<div class="login_form">
 						<div class="login_label">パスワード</div>
 						<div class="login_input">
-							<input type="password" th:field="*{empPass}" />
+							<input type="password" th:field="*{empPass}" id="password" th:errorclass="input-error" />
+							<input type="checkbox" id="togglePassword"> <label for="togglePassword">パスワードを表示</label>
 						</div>
 					</div>
+
 					<div class="login_form">
 						<div class="login_label"></div>
 						<div class="login_input">
@@ -46,6 +49,7 @@
 			</div>
 		</div>
 	</th:block>
+	<script th:src="@{/js/login.js}"></script>
 </body>
 
 </html>
