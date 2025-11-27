@@ -43,7 +43,7 @@ public class SearchForEmployeesByEmpNameService {
 	 */
 	//TODO ここに記述
 	public List<EmployeeBean> execute(String searchString) {
-		List<Employee> empList = employeeRepository.findByempNameContaining(searchString);
+		List<Employee> empList = employeeRepository.findByEmpNameContainingAndDeletedFlag(searchString, 0);
 		List<EmployeeBean> beanList = BeanManager.copyEntityListToBeanList(empList);
 		return beanList;
 	}

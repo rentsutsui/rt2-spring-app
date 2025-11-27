@@ -52,7 +52,7 @@ public class LoginService {
 	//TODO ここに記述
 	public LoginResultBean execute(LoginForm loginForm, Model model) {
 
-		Employee employees = employeeRepository.findByEmpIdAndEmpPass(loginForm.getEmpId(), loginForm.getEmpPass());
+		Employee employees = employeeRepository.findByEmpIdAndEmpPassAndDeletedFlag(loginForm.getEmpId(), loginForm.getEmpPass(), 0);
 
 		EmployeeBean employeeBean = new EmployeeBean();
 

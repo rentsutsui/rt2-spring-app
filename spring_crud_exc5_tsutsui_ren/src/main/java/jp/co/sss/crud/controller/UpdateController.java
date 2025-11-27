@@ -45,7 +45,7 @@ public class UpdateController {
 				employee = searchForEmployeesByEmpIdService.execute(empId);
 
 		employeeForm = BeanManager.copyBeanToForm(employee);
-		model.addAttribute("employeeForm", employee);
+		model.addAttribute("employeeForm", employeeForm);
 
 		return "update/update_input";
 	}
@@ -102,7 +102,7 @@ public class UpdateController {
 	 * @return 遷移先ビュー
 	 */
 	@RequestMapping(path = "/update/complete", method = RequestMethod.GET)
-	public String completeUpdate() {
+	public String displayComplete() {
 		return "update/update_complete";
 	}
 

@@ -46,7 +46,7 @@ public class SearchForEmployeesByDepartmentService {
 	public List<EmployeeBean> execute(Integer deptId) {
 		Department department = new Department();
 		department.setDeptId(deptId);
-		List<Employee> empList = employeeRepository.findByDepartmentOrderByEmpIdAsc(department);
+		List<Employee> empList = employeeRepository.findByDepartmentAndDeletedFlagOrderByEmpIdAsc(department, 0);
 		List<EmployeeBean> beanList = BeanManager.copyEntityListToBeanList(empList);
 		return beanList;
 	}

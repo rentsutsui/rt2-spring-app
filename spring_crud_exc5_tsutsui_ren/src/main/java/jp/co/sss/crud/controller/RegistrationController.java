@@ -86,7 +86,7 @@ public class RegistrationController {
 	 * @return 遷移先のビュー
 	 */
 	@RequestMapping(path = "/regist/complete", method = RequestMethod.GET)
-	public String completeRegist() {
+	public String displayComplete() {
 
 		return "regist/regist_complete";
 	}

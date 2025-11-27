@@ -39,7 +39,7 @@ public class SearchForEmployeesByEmpIdService {
 	 */
 	//TODO ここに記述
 	public EmployeeBean execute(Integer empId) {
-		Employee employee = employeeRepository.getReferenceById(empId);
+		Employee employee = employeeRepository.findByEmpIdAndDeletedFlag(empId, 0);
 		EmployeeBean employeeBean = BeanManager.copyEntityToBean(employee);
 		return employeeBean;
 	}

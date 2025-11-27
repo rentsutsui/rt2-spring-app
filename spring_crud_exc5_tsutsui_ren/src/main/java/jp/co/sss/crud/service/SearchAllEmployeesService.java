@@ -41,7 +41,7 @@ public class SearchAllEmployeesService {
 	//TODO ここに記述
 
 	public List<EmployeeBean> execute() {
-		List<Employee> empList = employeeRepository.findAllByOrderByEmpIdAsc();
+		List<Employee> empList = employeeRepository.findByDeletedFlagOrderByEmpIdAsc(0);
 		List<EmployeeBean> beanList = BeanManager.copyEntityListToBeanList(empList);
 		return beanList;
 	}

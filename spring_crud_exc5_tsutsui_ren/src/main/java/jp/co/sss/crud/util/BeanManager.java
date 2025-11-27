@@ -100,6 +100,8 @@ public class BeanManager {
 		department.setDeptId(form.getDeptId());
 		employee.setDepartment(department);
 
+		employee.setDeletedFlag(0);
+		
 		return employee;
 
 	}

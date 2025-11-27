@@ -42,6 +42,17 @@ public class Employee {
 	@ManyToOne
 	@JoinColumn(name = "dept_id", referencedColumnName = "deptId")
 	private Department department;
+	
+	@Column
+	private Integer deletedFlag;
+
+	public Integer getDeletedFlag() {
+		return deletedFlag;
+	}
+
+	public void setDeletedFlag(Integer deletedFlag) {
+		this.deletedFlag = deletedFlag;
+	}
 
 	public Integer getEmpId() {
 		return empId;
